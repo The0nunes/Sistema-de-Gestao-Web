@@ -1,0 +1,32 @@
+{% extends 'conteudo/base.html' %}
+{% block conteudo %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 20px;">Detalhe do Livro</h1>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Título</th>
+                    <th>Finalizado</th>
+                    <th>Resenha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{dados.id}}</td>
+                    <td>{{dados.titulo}}</td>
+                    <td>
+                        {% if dados.finalizado %}
+                        <span class="badge badge-success">Finalizado</span>
+                        {% else %}
+                        <span class="badge badge-warning">Não finalizado</span>
+                        {% endif %}
+                    </td>
+                    <td>{{dados.resenha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'conteudo/base.html' %}
+{% block conteudo %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <h1 style="text-align: center; margin-bottom: 20px;">Informações sobre o Livro</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{formulario | crispy}}
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'conteudo/base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center">Login</h1>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <div class="text-center mt-3">
+                            <button class="btn btn-primary" type="submit">Fazer login</button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="{% url 'novo_usuario' %}" class="text-decoration-none">Não possui uma conta? Criar
+                            conta</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
